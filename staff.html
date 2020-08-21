@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>Page Title</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+    <style>
+        .is-hidden--off-ffloow {
+            opacity: 0;
+            transition: all 0.2s ease-in-out;
+            z-index: -10;
+            /* *1* */
+            visibility: hidden;
+            /* *1* */
+        }
+        .is-shown--off-ffloow {
+            opacity: 1;
+            transition: all 0.2s ease-in-out;
+            visibility: visible;
+        }
+        .l-modal {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            margin: 0 auto;
+            z-index: 2;
+            text-align: center;
+            overflow:scroll;
+
+        }
+        .l-modal__body {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .l-modal__sshadoow {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            display: block;
+            background: #161616;
+            opacity: 0.92;
+            z-index: -1;
+            cursor: pointer;
+        }
+        .cccc-popup {
+            display: inline-block;
+            text-align: right;
+            background: white;
+            max-width: 300px;
+            width: 90%;
+            line-height: 1.48;
+            padding: 25px;
+        }
+        .ccc-popup label{
+            text-align: left;
+            display: block;
+            text-align: right;
+        }
+        .is-hidden--off-ffflow2 {
+            opacity: 0;
+            transition: all 0.2s ease-in-out;
+            z-index: -10;
+            /* *1* */
+            visibility: hidden;
+            /* *1* */
+        }
+        .is-shown--off-ffflow2 {
+            opacity: 1;
+            transition: all 0.2s ease-in-out;
+            visibility: visible;
+        }
+        .l-modal {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            margin: 0 auto;
+            z-index: 2;
+            text-align: center;
+            overflow:scroll;
+
+        }
+        .l-modal__body {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .l-modal__ssshadow2 {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            display: block;
+            background: #161616;
+            opacity: 0.92;
+            z-index: -1;
+            cursor: pointer;
+        }
+        .cccc-popup2 {
+            display: inline-block;
+            text-align: center;
+            background: white;
+            max-width: 300px;
+            width: 90%;
+            line-height: 1.48;
+            padding: 25px;
+        }
+        .cccc-popup2 label{
+            text-align: left;
+            display: block;
+            text-align: right;
+        }
+    </style>
+</head>
+<body class="jj">
+<div class="all-emp">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">الكافيه<i class="fas fa-home"></i> </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="casher.html">الكاشير<i class="fas fa-cash-register"></i> </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pro.html">المنتجات <i class="fas fa-box"></i> </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sales.html">المبيعات <i class="fas fa-donate"></i> </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="buy.html">المشتريات<i class="fas fa-users"></i> </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="reports.html">التقارير<i class="fas fa-money-check"></i> <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="staff.html">الموظفين<i class="fas fa-users"></i> </a>
+                </li>
+
+
+
+
+            </ul>
+
+        </div>
+    </nav>
+    <div class="chef">
+        <div class="container">
+            <div class="sale" style="margin-top: 30px; color: gainsboro">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4"><input type="search" placeholder="search for employee" style="background: #a1a1a1; width: 100%; border-radius: 20px ;border: 1px solid black; padding: 7px; direction: ltr"></div>
+                    <div class="col-lg-6 col-md-6">show<select id="num">
+                        <option value="volvo">10</option>
+                        <option value="saab">25</option>
+                        <option value="opel">25</option>
+                        <option value="audi">100</option>
+                    </select>entry</div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">الاسم</th>
+                            <th scope="col">الرقم القومى</th>
+                            <th scope="col">رقم التليفون</th>
+                            <th scope="col">العنوان</th>
+                            <th scope="col">تاريخ التعيين</th>
+                            <th scope="col">ميعاد العمل</th>
+                            <th scope="col">الوظيفه</th>
+                            <th scope="col">الراتب</th>
+                            <th scope="col">اجراء</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>احمد محمد</td>
+                            <td>123456789</td>
+                            <td>010000000</td>
+                            <td>شبين الكوم</td>
+                            <td>12/10/2018</td>
+
+                            <td>8-4</td>
+                            <td>chief</td>
+
+                            <td><i class="fas fa-plus"></i> 2500$<i class="fas fa-minus"></i></td>
+                            <td><i class="fas fa-edit js-modal-sshoow" style="margin-left: 5px"></i></td>
+                            <div class="l-modal is-hidden--off-ffloow js-modal-sshopiffy">
+                                <div class="l-modal__sshadoow js-modal-hhidde"></div>
+                                <div class="cccc-popup l-modal__body">
+                                    <label ><b>الاسم:</b></label>
+                                    <br>
+                                    <input type="text" value="احمدمحمد">
+                                    <br>
+                                    <label ><b>الرقم القومى:</b></label>
+                                    <br>
+                                    <input type="text" value="123456789">
+                                    <br>
+                                    <label ><b>التليفون:</b></label>
+                                    <br>
+                                    <input type="text" value="010000000">
+                                    <br>
+                                    <label ><b>العنوان:</b></label>
+                                    <br>
+                                    <input type="text" value="شبين الكوم">
+                                    <br>
+                                    <label ><b>تاريخ التعيين :</b></label>
+                                    <br>
+                                    <input type="text" value="18/12/2020">
+                                    <br>
+                                    <label ><b>ميعاد العمل :</b></label>
+                                    <br>
+                                    <input type="text" value="8-4">
+                                    <br>
+                                    <label ><b>الوظيفه:</b></label>
+                                    <br>
+                                    <input type="text" value="chief">
+                                    <br>
+                                    <label ><b>الراتب :</b></label>
+                                    <br>
+                                    <input type="text" value="2500$">
+                                    <br>
+                                    <button type="button" class="btn" style="background:rgb(152, 174, 241); padding: 3px 10px; color: black; border: 1px solid black; margin-top: 20px;">تعديل</button>
+                                    <button type="button" class="btn" style="background:rgb(152, 174, 241); padding: 3px 10px; color: black; border: 1px solid black; margin-top: 20px;">حذف</button>
+
+                                </div>
+                            </div>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>احمد محمد</td>
+                            <td>123456789</td>
+                            <td>010000000</td>
+                            <td>شبين الكوم</td>
+                            <td>12/10/2018</td>
+
+                            <td>8-4</td>
+                            <td>chief</td>
+
+                            <td><i class="fas fa-plus"></i> 2500$<i class="fas fa-minus"></i></td>
+                            <td><i class="fas fa-edit js-modal-sshoow" style="margin-left: 5px"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>احمد محمد</td>
+                            <td>123456789</td>
+                            <td>010000000</td>
+                            <td>شبين الكوم</td>
+                            <td>12/10/2018</td>
+
+                            <td>8-4</td>
+                            <td>chief</td>
+
+                            <td><i class="fas fa-plus"></i> 2500$<i class="fas fa-minus"></i></td>
+                            <td><i class="fas fa-edit js-modal-sshoow" style="margin-left: 5px"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>احمد محمد</td>
+                            <td>123456789</td>
+                            <td>010000000</td>
+                            <td>شبين الكوم</td>
+                            <td>12/10/2018</td>
+
+                            <td>8-4</td>
+                            <td>chief</td>
+
+                            <td><i class="fas fa-plus"></i> 2500$<i class="fas fa-minus"></i></td>
+                            <td><i class="fas fa-edit js-modal-sshoow" style="margin-left: 5px"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>احمد محمد</td>
+                            <td>123456789</td>
+                            <td>010000000</td>
+                            <td>شبين الكوم</td>
+                            <td>12/10/2018</td>
+
+                            <td>8-4</td>
+                            <td>waiter</td>
+
+                            <td><i class="fas fa-plus"></i> 1500$<i class="fas fa-minus"></i></td>
+                            <td><i class="fas fa-edit js-modal-sshoow" style="margin-left: 5px"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>احمد محمد</td>
+                            <td>123456789</td>
+                            <td>010000000</td>
+                            <td>شبين الكوم</td>
+                            <td>12/10/2018</td>
+
+                            <td>8-4</td>
+                            <td>waiter</td>
+
+                            <td><i class="fas fa-plus"></i> 1500$<i class="fas fa-minus"></i></td>
+                            <td><i class="fas fa-edit js-modal-sshoow" style="margin-left: 5px"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>احمد محمد</td>
+                            <td>123456789</td>
+                            <td>010000000</td>
+                            <td>شبين الكوم</td>
+                            <td>12/10/2018</td>
+
+                            <td>8-4</td>
+                            <td>waiter</td>
+
+                            <td><i class="fas fa-plus"></i> 1500$<i class="fas fa-minus"></i></td>
+                            <td><i class="fas fa-edit js-modal-sshoow" style="margin-left: 5px"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>احمد محمد</td>
+                            <td>123456789</td>
+                            <td>010000000</td>
+                            <td>شبين الكوم</td>
+                            <td>12/10/2018</td>
+
+                            <td>8-4</td>
+                            <td>casher</td>
+
+                            <td><i class="fas fa-plus"></i> 1700$<i class="fas fa-minus"></i></td>
+                            <td><i class="fas fa-edit js-modal-sshoow" style="margin-left: 5px"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>ااحمد محمد</td>
+                            <td>123456789</td>
+                            <td>010000000</td>
+                            <td>شبين الكوم</td>
+                            <td>12/10/2018</td>
+
+                            <td>8-4</td>
+                            <td>casher</td>
+
+                            <td><i class="fas fa-plus"></i> 1700$<i class="fas fa-minus"></i></td>
+                            <td><i class="fas fa-edit js-modal-sshoow" style="margin-left: 5px"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">10</th>
+                            <td>احمد محمد</td>
+                            <td>123456789</td>
+                            <td>010000000</td>
+                            <td>شبين الكوم</td>
+                            <td>12/10/2018</td>
+
+                            <td>8-4</td>
+                            <td>casher</td>
+
+                            <td><i class="fas fa-plus"></i> 700$<i class="fas fa-minus"></i></td>
+                            <td><i class="fas fa-edit js-modal-sshoow" style="margin-left: 5px"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">11</th>
+                            <td>احمد محمد</td>
+                            <td>123456789</td>
+                            <td>010000000</td>
+                            <td>شبين الكوم</td>
+                            <td>12/10/2018</td>
+
+                            <td>8-4</td>
+                            <td>casher</td>
+
+                            <td><i class="fas fa-plus"></i> 700$<i class="fas fa-minus"></i></td>
+                            <td><i class="fas fa-edit js-modal-sshoow" style="margin-left: 5px"></i></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <button class="js-modal-ssshow2">اضافه موظف</button>
+                    <div class="l-modal is-hidden--off-ffflow2 js-modal-ssshopify2">
+                        <div class="l-modal__ssshadow2 js-modal-hhhide2"></div>
+                        <div class="cccc-popup2 l-modal__body">
+                            <span style="color: #161616; background: gainsboro; padding: 7px 20px;margin-top:10px">اضافه موظف</span>
+                            <label style="margin-top: 10px" ><b >الاسم: </b></label>
+                            <input type="text" style="direction: rtl">
+                            <label ><b>الرقم القومى: </b></label>
+                            <input type="text"   style="direction: rtl">
+                            <label ><b>رقم التليفون:</b></label>
+                            <input type="text"  style="direction: rtl">
+                            <label><b>العنوان:</b></label>
+                            <input type="text"   style="direction: rtl">
+                            <label><b>تاريخ التعببن:</b></label>
+                            <input type="text"   style="direction: rtl">
+                            <label><b>ميعاد العمل:</b></label>
+                            <input type="text"   style="direction: rtl">
+                            <label><b>الوظيفه:</b></label>
+                            <input type="text"   style="direction: rtl">
+                            <label><b>الراتب:</b></label>
+                            <input type="text"  style="direction: rtl">
+                            <br>
+                            <button type="button" class="btn" style="background:rgb(152, 174, 241); padding: 3px 10px; color: black; border: 1px solid black; margin-top: 20px;">اضافه</button>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://kit.fontawesome.com/d23dbc96b1.js" crossorigin="anonymous"></script>
+
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script>
+    $('.js-modal-sshoow').click(function(){
+        $('.js-modal-sshopiffy').toggleClass('is-shown--off-ffloow').toggleClass('is-hidden--off-ffloow');
+    });
+
+    $('.js-modal-hhidde').click(function(){
+        $('.js-modal-sshopiffy').toggleClass('is-shown--off-ffloow').toggleClass('is-hidden--off-ffloow');
+    });
+</script>
+<script>
+    $('.js-modal-ssshow2  ').click(function(){
+        $('.js-modal-ssshopify2  ').toggleClass('is-shown--off-ffflow2  ').toggleClass('is-hidden--off-ffflow2  ');
+    });
+    $('.js-modal-hhhide2  ').click(function(){
+        $('.js-modal-ssshopify2  ').toggleClass('is-shown--off-ffflow2  ').toggleClass('is-hidden--off-ffflow2  ');
+    });
+</script>
+</body>
+</html>
